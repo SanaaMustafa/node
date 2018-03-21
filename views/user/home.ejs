@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--       -->
+    <!--  Meta Tags     -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>العميل التجاري</title>
+
+    <!-- web-fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,500' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- off-canvas -->
+    <link href="/css/Ar/mobile-menu.css" rel="stylesheet">
+
+    <!-- Style CSS -->
+    <link href="/css/Ar/style.css" rel="stylesheet">
+    <link href="/css/Ar/forms.css" rel="stylesheet">
+    <link href="/css/Ar/theme-style.css" rel='stylesheet' type='text/css' />
+    <link href="/css/Ar/bootstrap.min.css" rel="stylesheet" />
+
+    <!--font-awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/fonts/flaticon/flaticon.css" rel="stylesheet">
+
+    <!-- Slider -->
+    <link rel="stylesheet" type="text/css" href="/engine/style.css" />
+    <script type="text/javascript" src="/engine/jquery.js"></script>
+
+    <!-- ************** -->
+
+    <!-- Scripts -->
+    <script src="/js/jquery.mixitup.min.js"></script>
+    <script src="/js/hover_pack.js"></script>
+    <script src="/js/forms.js"></script>
+    <script src="/js/jquery-ui.custom.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+
+    <script>
+        $(function () {
+            var width = $(window).width(),
+                height = $(window).height();
+            if ((width <= 768)) {
+                $('.navbar').addClass('navbar-fixed-top');
+            }
+        });
+
+        $(window).on('load resize', function () {
+            if ($(window).width() <= 768) {
+                $('.navbar').addClass('navbar-fixed-top');
+                $('#wowslider-container1').css("margin-top", "90px");
+            } else {
+                $('.navbar').removeClass('navbar-fixed-top');
+            }
+        });
+    </script>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rakkas" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa" rel="stylesheet">
+</head>
+
+
+<body style="font-family: 'Lalezar', serif;font-size: 18px">
+
+    <!-- Start forms-->
+    <div class="modal fade login" id="loginModal" style="background: top">
+        <div class="modal-dialog login animated">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Login with</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="box">
+                        <div class="content">
+                            <div class="social">
+                                <a class="circle github" href="/auth/github">
+                                    <i class="fa fa-github fa-fw"></i>
+                                </a>
+                                <a id="google_login" class="circle google" href="/auth/google_oauth2">
+                                    <i class="fa fa-google-plus fa-fw"></i>
+                                </a>
+                                <a id="facebook_login" class="circle facebook" href="/auth/facebook">
+                                    <i class="fa fa-facebook fa-fw"></i>
+                                </a>
+                            </div>
+                            <div class="division">
+                                <div class="line l"></div>
+                                <span>or</span>
+                                <div class="line r"></div>
+                            </div>
+                            <div class="error">
+                                   
+                            </div>
+                            <div class="form loginBox">
+                                  
+                                <form method="post" action="" accept-charset="UTF-8">
+                                    <input id="usernamel" class="form-control" type="text" placeholder="username" name="usernamel" >
+                                    <input id="passwordl" class="form-control" type="password" placeholder="Password" name="passwordl">
+                                    <input class="btn btn-default btn-login" type="submit" value="Login">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="content registerBox" style="display: none;">
+                            <div class="form">
+                                <form method="post" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
+                                    <input id="name" class="form-control" type="text" placeholder="name" name="name">
+                                    <input id="username" class="form-control" type="text" placeholder="username" name="username">
+                                    <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                                    <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
+                                    <input class="btn btn-default btn-register" type="submit" value="Create account" name="commit">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="content uploadBox" style="display: none;">
+                            <div class="error"></div>
+                            <div class="form">
+                                <form method="post" enctype="multipart/form-data" action="" accept-charset="UTF-8">
+                                    <input type="text" class="form-control" id="nameu" name="nameu" placeholder="Your Name" required>
+                                    <input type="text" class="form-control" id="title" name="title" placeholder="Title" required>
+                                    <input type="text" class="form-control" id="city" name="city" placeholder="city" required>
+                                    <input type="number" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+                                    <input type="number" class="form-control" id="price" name="price" placeholder="price" required>
+                                    <label for="exampleInputFile"></label>
+                                    <textarea class="form-control" type="textarea" id="description" name="description" placeholder="Description" maxlength="140" rows="7"></textarea>
+                                    <label for="image">اختر صورة</label>
+                                    <input type="file" id="image" name="image">
+                                    <!--<label for="exampleInputFile1">اختر صورة</label>
+                                    <input type="file" id="exampleInputFile1" name="exampleInputFile1">
+                                    <label for="exampleInputFile2">اختر صورة</label>
+                                    <input type="file" id="exampleInputFile2" name="exampleInputFile2">
+                                    <label for="exampleInputFile3">اختر صورة</label>
+                                    <input type="file" id="exampleInputFile3" name="exampleInputFile3">-->
+                                    <br/>
+                                    <select class="form-control" name="caty" style="color:black;">
+                                        <option value="0">Category</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="other">other</option>
+                                    </select>
+                                    <br/>
+                                    <select class="form-control"name="advp"  style="color:black;">
+                                        <option value="0">Adv Period</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                    </select>
+
+                                    
+                                    <label class="checkbox-inline">
+                                        <input type="radio" id="advType" name="type1" value="top"> Top</label>
+                                    <label class="checkbox-inline">
+                                        <input type="radio" id="advType2" name="type1" value="ordinary"> Ordinary</label>
+                                    <br/>
+                                    <br/>
+                                    <input class="btn btn-default btn-login" type="submit" value="Upload">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="forgot login-footer">
+                        <span>
+                            Looking to
+                            <a href="javascript: showRegisterForm();">create an account</a>
+                            ?
+                        </span>
+                    </div>
+                    <div class="forgot register-footer" style="display: none">
+                        <span>Already have an account?</span>
+                        <a href="javascript: showLoginForm();">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End forms -->
+
+
+    <!-- Start Profile Bar -->
+
+    <div id="main-wrapper">
+        <!-- Page Preloader -->
+        <div id="preloader">
+            <div id="status">
+                <div class="status-mes"></div>
+            </div>
+        </div>
+
+        <div class="uc-mobile-menu-pusher">
+
+            <div class="content-wrapper">
+                <!-- Header Top -->
+                <div class="header-top visible-md visible-lg">
+                    <div>
+                        <div class="row" style="margin-left: 15px">
+                            <div class="col-sm-12 col-md-4">
+                                <ul class="social-icon">
+                                    <li>
+                                        <a href=" " class="fa fa-facebook" aria-hidden="true"> </a>
+                                    </li>
+                                    <li>
+                                        <a href=" " class="fa fa-twitter" aria-hidden="true"> </a>
+                                    </li>
+                                    <li>
+                                        <a href=" " class="fa fa-pinterest-p" aria-hidden="true"> </a>
+                                    </li>
+                                    <li>
+                                        <a href=" " class="fa fa-google-plus" aria-hidden="true"> </a>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                            <div class="col-sm-12 col-md-8" style="float:right;margin-top: 5px ;padding-right:20px">
+                                <ul class="top-contact pull-right">
+
+                                    <li class="phone">
+                                        <i class="fa fa-phone-square" aria-hidden="true"></i> رقمنا : 01000000000</li>
+                                    <li class="email">
+                                        <i class="fa fa-envelope" aria-hidden="true"></i> ايميل : aaaa@ gmail.com</li>
+                                    <li>
+                                        <a class="btn big-login btn-lg" data-toggle="modal" href="javascript:void(0)" onclick="openUploadModal();">ارفع اعلانك</a>
+                                    </li>
+                                    <li>
+                                        <a class="btn big-login btn-lg" data-toggle="modal" href="/user/register1"> <%= user.username  %></a>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ************ End Profile Bar -->
+
+
+                <!-- . Start navbar-top -->
+
+                <nav class="navbar m-menu navbar-default ">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="index.html">
+                                <img src="/img/logo.png" alt=""> </a>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="#navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right main-nav">
+
+                                <li class="active">
+                                    <a href="index.html">الرئيسية</a>
+                                </li>
+                                <li>
+                                    <a href="about.html">اعرف عنا </a>
+                                </li>
+                                <li>
+                                    <a href="contact.html">تواصل معنا</a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                        <!-- .navbar-collapse -->
+                    </div>
+                    <!-- .container -->
+                </nav>
+                <!-- .nav -->
+
+                <!-- Start Slider -->
+
+                <div id="wowslider-container1">
+                    <div class="ws_images">
+                        <div class="carousel-caption">
+
+
+                        </div>
+
+                        <ul>
+                            <li>
+                                <img src="/img/slide2.jpg" alt="العميل التجاري" title="العميل التجاري" id="wows1_0" />
+                            </li>
+                            <li>
+                                <img src="/img/slide1.jpg" title="أسهل طريقة لعرض إعلانك" id="wows1_1" />
+                            </li>
+                            <li>
+                                <img src="/img/slide3.jpg" alt="أقصر طريق للعميل" title="أقصر طريق للعميل" id="wows1_2" />
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ws_bullets">
+                        <div>
+                            <a href="#" title="العميل التجاري">
+                                <span>
+                                    <img src="/img/mini_slide2.jpg" alt="العميل التجاري" />1</span>
+                            </a>
+                            <a href="#" title="أسهل طريقة لعرض إعلانك">
+                                <span>
+                                    <img src="/img/mini_slide1.jpg" alt="أسهل طريقة لعرض إعلانك" />2</span>
+                            </a>
+                            <a href="#" title="أقصر طريق للعميل">
+                                <span>
+                                    <img src="/img/mini_slide3.jpg" alt="أقصر طريق للعميل" />3</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ws_script" style="position:absolute;left:-99%"> </div>
+                    <div class="ws_shadow"></div>
+                </div>
+                <script type="text/javascript" src="/engine/wowslider.js"></script>
+                <script type="text/javascript" src="/engine/script.js"></script>
+
+
+                <!-- End Slider -->
+
+
+
+
+                <!-- Body-->
+
+
+                <!-- new -->
+
+                <div style="padding-bottom: 10px; padding-top: 0px; padding-left: 0px;padding-right: 0px; " class="col-lg-12 col-md-12">
+
+                    <!----start-portfolio---->
+                    <div class="portfolio section s2">
+                        <div class="container portfolio-head">
+                            <div id="hh" data-toggle="modal" href="javascript:void(0)" onclick="openUploadModal();" style="border-radius: 8px;color:white;font-size: 500%;background-color:#31aae2 ">ارفع اعلانك </div>
+                            <h3> المحافظات </h3>
+                        </div>
+                        <!---- start-portfolio-script---->
+                        <script src="/js/hover_pack.js"></script>
+                        <script type="text/javascript" src="/js/jquery.mixitup.min.js"></script>
+                        <script type="text/javascript">
+                            $(function () {
+                                var filterList = {
+                                    init: function () {
+
+                                        // MixItUp plugin
+                                        // http://mixitup.io
+                                        $('#portfoliolist').mixitup({
+                                            targetSelector: '.portfolio',
+                                            filterSelector: '.filter',
+                                            effects: ['fade'],
+                                            easing: 'snap',
+                                            // call the hover effect
+                                            onMixEnd: filterList.hoverEffect()
+                                        });
+
+                                    },
+                                    hoverEffect: function () {
+                                        // Simple parallax effect
+                                        $('#portfoliolist .portfolio').hover(
+                                            function () {
+                                                $(this).find('.label').stop().animate({
+                                                    bottom: 0
+                                                }, 200, 'easeOutQuad');
+                                                $(this).find('img').stop().animate({
+                                                    top: -30
+                                                }, 500, 'easeOutQuad');
+                                            },
+                                            function () {
+                                                $(this).find('.label').stop().animate({
+                                                    bottom: -40
+                                                }, 200, 'easeInQuad');
+                                                $(this).find('img').stop().animate({
+                                                    top: 0
+                                                }, 300, 'easeOutQuad');
+                                            }
+                                        );
+
+                                    }
+
+                                };
+                                // Run the show!
+                                filterList.init();
+                            });
+                        </script>
+                        <!----//End-portfolio-script---->
+
+
+                        <ul id="filters" class="clearfix">
+                            <li>
+                                <span class="filter active" data-filter="one two three four five six">الكل</span>
+                            </li>
+                            <li>
+                                <span class="filter" data-filter="one">الأحمدي</span>
+                            </li>
+                            <li>
+                                <span class="filter" data-filter="two">الفروانية</span>
+                            </li>
+                            <li>
+                                <span class="filter" data-filter="three"> حولي</span>
+                                <li>
+                                    <span class="filter" data-filter="four">مبارك الكبير</span>
+                                </li>
+                                <li>
+                                    <span class="filter" data-filter="five">الجهراء</span>
+                                </li>
+                                <li>
+                                    <span class="filter" data-filter="six">العاصمة</span>
+                                </li>
+                            </li>
+                        </ul>
+                        <div>
+
+                            <div class="container pad-right-0 pad-top listing-small" style="width:100%;margin-bottom: 100px;margin-left: 0px">
+                                <!-- static icons for premium filters -->
+                                <div style="float:right" class="col-lg-3 col-md-3 col-sm-12 col-xs-12 pad-right-0 pad-top">
+
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-left-0 pad-right-0 pad-top pad-bottom background-fcfcfc left-panel">
+                                        <center>
+                                            <h3 class="margin-0 col-lg-12 col-md-12 col-sm-12 col-xs-12">تصنيفات شائعة</h3>
+                                        </center>
+                                    </div>
+
+
+                                    <div class="panel-group col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-left-0 pad-right-0" id="accordion">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo_2458">
+                                                        الكترونيات - محركات - عقار
+                                                        <span class="fa accordion float-left">
+                                                        </span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo_2458" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <span class="pointer" style="display: block" onclick=""> عقار بانواعه
+                                                        <span class="float-right font-size-12 color-aaa">0</span>
+                                                    </span>
+                                                    <span class="pointer" style="display: block" onclick=";"> محركات
+                                                        <span class="float-right font-size-12 color-aaa">0</span>
+                                                    </span>
+                                                    <span class="pointer" style="display: block" onclick="">
+                                                        الالكترونيات
+                                                        <span class="float-right font-size-12 color-aaa">0</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo_2459">
+                                                        الخدمات
+                                                        <span class="fa accordion float-left">
+                                                        </span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo_2459" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <a href=""> نقل عفش
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <span class="pointer" style="display: block" onclick="">
+                                                        مقاولات وحرف
+                                                        <span class="float-right font-size-12 color-aaa">0</span>
+                                                    </span>
+                                                    <a href=""> ستلايت
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <span class="pointer" style="display: block" onclick="">
+                                                        عمالة منزلية
+                                                        <span class="float-right font-size-12 color-aaa">0</span>
+                                                    </span>
+                                                    <a href=""> خدمة المصابغ
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> بقالات
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo_2460">
+                                                        الأسرة
+                                                        <span class="fa accordion float-left">
+                                                        </span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo_2460" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <span class="pointer" style="display: block" onclick=""> الرجال
+                                                        <span class="float-right font-size-12 color-aaa">0</span>
+                                                    </span>
+                                                    <span class="pointer" style="display: block" onclick=""> النساء
+                                                        <span class="float-right font-size-12 color-aaa">0</span>
+                                                    </span>
+                                                    <span class="pointer" style="display: block" onclick=""> الأطفال
+                                                        <span class="float-right font-size-12 color-aaa">0</span>
+                                                    </span>
+                                                    <span class="pointer" style="display: block" onclick="">
+                                                        الهدايا والساعات
+                                                        <span class="float-right font-size-12 color-aaa">0</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo_1550">
+                                                        الأثاث
+                                                        <span class="fa accordion float-left">
+                                                        </span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo_1550" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <a href=""> نشتري الأثاث
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> اثاث منزلي
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> تنجيد
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> المفروشات
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> أثاث مكتبي
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo_105">
+                                                        الحيوانات
+                                                        <span class="fa accordion float-left">
+                                                        </span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo_105" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <a href=""> الحيوانات
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> الطيور
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> معدات الحيوانات والطيور
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo_96">
+                                                        مستلزمات البر و المخيمات
+                                                        <span class="fa accordion float-left">
+                                                        </span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo_96" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <a href=""> أغراض المخيمات
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> الخيام
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> ألعاب ونطاطيات
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> مولدات كهربائية
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> معدات الصيد
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> كبائن متنقله
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> للايجار مخيم
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> الطاقة الشمسية
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> الفحم
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> ستلايت البر
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo_1561">
+                                                        الوظائف
+                                                        <span class="fa accordion float-left">
+                                                        </span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo_1561" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <a href=""> سكرتارية
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> تعقيب معاملات
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> تقنية معلومات
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> مدراء
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> مصممين جرافيك
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> اداريين
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> خياط
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=" "> خدمات الكترونية
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> مهندسين
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> محامي
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> محاسبة
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> وظائف أخرى
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> كوافيرة
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> خدمات مختلفة
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> حلاق
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> خدمات توصيل
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo_1569">
+                                                        معاهد تدريب وتدريس
+                                                        <span class="fa accordion float-left">
+                                                        </span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo_1569" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <a href=""> تدريس لغة عربية
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> خدمات جامعية
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> تدريس لغة انجليزية
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> تدريس الرياضيات
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> تدريس لغة فرنسية
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> العلوم
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> الفيزياء والكيمياء
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> مواد دراسية مختلفة
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> اللوازم المدرسية
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> كتب للبيع
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo_1837">
+                                                        صحتك
+                                                        <span class="fa accordion float-left">
+                                                        </span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo_1837" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <a href=""> الاطباء
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> أجهزة طبية
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> ذوي الاحتياجات الخاصة
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> الصيدليات
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> تمريض
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo_1545">
+                                                        المأكولات
+                                                        <span class="fa accordion float-left">
+                                                        </span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo_1545" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <a href=""> المطبخ العربي
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <span class="pointer" style="display: block" onclick="">
+                                                        المطبخ الكويتي
+                                                        <span class="float-right font-size-12 color-aaa">0</span>
+                                                    </span>
+                                                    <a href=""> الحلويات
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> العسل
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> التمور
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> اللحوم
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> الأسماك
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> أطعمة أخرى
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo_107">
+                                                        متفرقات متنوعه
+                                                        <span class="fa accordion float-left">
+                                                        </span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo_107" class="panel-collapse collapse">
+                                                <div class="panel-body">
+                                                    <a href=""> سياحة وسفر
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <span class="pointer" style="display: block" onclick="">
+                                                        مستلزمات الأفراح
+                                                        <span class="float-right font-size-12 color-aaa">0</span>
+                                                    </span>
+                                                    <a href=""> ادوات موسيقية
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> عملات و طوابع و تحف قديمه
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> لوحات فنية
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> مطبوعات
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> مستلزمات صالونات
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> مبيعات الجملة
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> مفقودات
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                    <a href=""> متفرقات أخرى
+                                                        <span class="float-right font-size-12 color-aaa">0</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div id="portfoliolist" class="col-lg-9 col-md-9 col-sm-12" style="float :left">
+
+                                    <div class="portfolio one mix_all" data-cat="one" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="adv.html">
+                                                <img src="/images/p1.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio two mix_all" data-cat="two" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p2.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio three mix_all" data-cat="three" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p3.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio four mix_all" data-cat="four" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p4.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio five mix_all" data-cat="five" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p5.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio six mix_all" data-cat="six" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p6.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio one mix_all" data-cat="one" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p1.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio two mix_all" data-cat="two" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p2.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio three mix_all" data-cat="three" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p3.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio four mix_all" data-cat="four" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p4.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio five mix_all" data-cat="five" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p5.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio six mix_all" data-cat="six" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p6.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio one mix_all" data-cat="one" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p1.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio two mix_all" data-cat="two" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p2.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio three mix_all" data-cat="three" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p3.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio four mix_all" data-cat="four" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p4.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio five mix_all" data-cat="five" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p5.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio six mix_all" data-cat="six" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p6.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio one mix_all" data-cat="one" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p1.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio two mix_all" data-cat="two" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p2.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio three mix_all" data-cat="three" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p3.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio four mix_all" data-cat="four" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p4.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio five mix_all" data-cat="five" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p5.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="portfolio six mix_all" data-cat="six" style="display: inline-block; opacity: 1;">
+                                        <div>
+                                            <a class="ad-items" href="">
+                                                <img src="/images/p6.jpg" />
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-top ads-details-content">
+                                            <a href="">
+                                                <h3 title="اعلان" class="margin-top-0">
+                                                    <span itemprop="name" class="name"> سيارة</span>
+                                                </h3>
+                                            </a>
+                                            <p>
+                                                <span itemprop="description" class="description"> سيارة ميرسيديس.</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad-bottom">
+                                            <p>
+                                                <span itemprop='price' class="price-details float-right">0 د.ك</span>
+                                                <a class="btn btn-info float-left show-details" itemprop="url" href="">
+                                                    <i class="fa fa-eye"></i> إعرض التفاصيل
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="scroll_top_container">
+                                <a id="scroll_top" class="cd-top">
+                                    <i class="fa fa-angle-up"></i>
+                                </a>
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="clearfix"> </div>
+
+                    </div>
+
+                </div>
+                <!----//End-portfolio---->
+
+
+
+                <!-- /.client-logo -->
+
+
+                <footer class="footer">
+
+                    <!-- Footer Widget Section -->
+                    <div class="footer-widget-section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="footer-logo">
+                                        <a href="#">
+                                            <img class="img-responsive" src="/img/logo-footer.png" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <!-- /.col-sm-4 -->
+
+                                <div class="col-md-8">
+                                    <div class="footer-text">
+                                        <p> موقعنا يساعدك للوصول الي عميلك و التواصل معه بسهولة و توصيل اعلانك لأي فئة تريد.</p>
+
+                                        <ul>
+                                            <li class="phone">
+                                                <i class="fa fa-volume-control-phone" aria-hidden="true"></i> phone
+                                                <small>
+                                                    <i class="fa fa-clock-o" aria-hidden="true"></i> Mon - Sat 8.00 - 18.00h</small>
+                                            </li>
+                                            <li class="address">
+                                                <address>
+                                                    <i class="fa fa-map-pin" aria-hidden="true"></i>
+                                                    Address
+                                                </address>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <!-- /.col-sm-4 -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.Footer Widget Section -->
+
+                    <div class="copyright-section">
+                        <div class="container clearfix">
+                            <span class="copytext">Copyright &copy; 2016 |
+                                <a href="">العميل التجاري</a>
+                            </span>
+
+                            <ul class="list-inline pull-right">
+                                <li class="active">
+                                    <a href="#">الرئيسية</a>
+                                </li>
+                                <li>
+                                    <a href="#">اعرف عنا</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">الاعلانات</a>
+                                </li>
+
+                                <li>
+                                    <a href="#">تواصل معنا</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- .container -->
+
+                    </div>
+                    <!-- .copyright-section -->
+                </footer>
+                <!-- .footer -->
+
+            </div>
+            <!-- .content-wrapper -->
+        </div>
+        <!-- .uc-mobile-menu-pusher -->
+
+        <div class="uc-mobile-menu uc-mobile-menu-effect">
+            <button type="button" class="close" aria-hidden="true" data-toggle="offcanvas" id="uc-mobile-menu-close-btn">&times;</button>
+            <div>
+                <div>
+                    <ul id="menu">
+                        <li>
+                            <a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();"> الدخول </a>
+                        </li>
+                        <li>
+                            <a href="index.html">الرئيسية</a>
+                        </li>
+                        <li>
+                            <a href="about.html">اعرف عنا</a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">تواصل معنا</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- .uc-mobile-menu -->
+
+    </div>
+    <!-- #main-wrapper -->
+
+
+    <!-- Script -->
+
+    <script src="/js/mobile-menu.js"></script>
+    <script src="/js/scripts.js"></script>
+</body>
+
+</html>
